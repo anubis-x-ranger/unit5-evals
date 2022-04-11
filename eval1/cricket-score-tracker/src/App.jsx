@@ -9,11 +9,15 @@ function App() {
         setRuns(runs+inc);
     }
     const wicketsincrease=(wik)=>{
-        setWickets(wickets+wik);
+        if(wickets<12){
+            setWickets(wickets+wik);
+        }
+       
     }
     const ballsincrease=(b)=>{
         setballs(balls+b);
     }
+    const msg="India Won";
     return (
       <div className="App">
         <h3>India:</h3>
@@ -34,7 +38,7 @@ function App() {
           <div>
             Over:{" "}
             <h1 className="overCount">
-              
+              {balls}
             </h1>
           </div>
         </div>
@@ -58,10 +62,16 @@ function App() {
           {/* Increase the total number of balls thrown here. */}
           <button onClick={()=>ballsincrease(1)}>Add 1</button>
         </div>
-  
         {/* If score reaches greater than 100, show text "India Won" without quotes in h1 tag with class name 'status' */}
+        <h1>{{runs}>100 ? (msg)=>status(msg): ""}</h1>
       </div>
     );
   }
-  
+  function status(msg){
+      return(
+          <>
+          <h1>{msg}</h1>
+          </>
+      )
+  }
   export default App;
