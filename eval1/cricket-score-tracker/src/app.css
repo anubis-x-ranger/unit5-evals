@@ -1,0 +1,31 @@
+.App{
+    border:1px solid red;
+    margin: 5px 5px;
+}
+.banner{
+    display: flex;
+    justify-content: space-around;
+}
+.addScore,.addWicket{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+}
+.addScore1,.addScore4,.addScore6{
+    margin-left: 20px;
+    height:60px;
+    width:100px;
+    background-color: red;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: white;
+}
+.addWicket>button{
+    margin-left:20px;
+    height:60px;
+    width:100px;
+    background-color: red;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: white;
+}
