@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-around;
 }
-.addScore,.addWicket{
+.addScore,.addBall,.addWicket{
     display: flex;
     margin: 20px;
     align-items: center;
@@ -21,6 +21,15 @@
     color: white;
 }
 .addWicket>button{
+    margin-left:20px;
+    height:60px;
+    width:100px;
+    background-color: red;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: white;
+}
+.addBall>button{
     margin-left:20px;
     height:60px;
     width:100px;
