@@ -3,11 +3,14 @@ import { AddStudent } from './components/AddStudent';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [pageText, setPageText] = useState("false")
+  const handleClick=(e)=>{
+    const {id}=e.target;
+    setPageText(id);
+  }
   return (
     <div className="App">
-      <button className="togglebtn" >{}</button>
+      <button className="togglebtn" onClick={()=>handleClick("true")}>{pageText}</button>
       {/* Show either  AddStudent component or ShowStudents dependeing on the above button click  */}
       {/* make sure the table is shown initially, do not show form initially */}
       {/* make sure to show either of them do not both together */}
