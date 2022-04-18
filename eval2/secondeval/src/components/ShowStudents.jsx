@@ -7,7 +7,7 @@ export const ShowStudents = () => {
       getdata();
   }, [page])
   const getdata=()=>{
-    axios.get(`http://localhost:8080/addstudent?_page=${page}`)
+    axios.get(`http://localhost:8080/students?_page=${page}`)
     .then((res)=>{
         setData(res.data);
     })

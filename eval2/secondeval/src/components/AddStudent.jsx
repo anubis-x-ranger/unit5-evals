@@ -22,7 +22,7 @@ export const AddStudent = () => {
 
     const handleSubmit=(e)=>{
       e.preventDefault();
-      axios.post(`http://localhost:8080/addstudent`,formData)
+      axios.post(`http://localhost:8080/students`,formData)
       .then((res)=>{
           setFormData({
             first_name:"",
