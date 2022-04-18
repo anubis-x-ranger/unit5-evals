@@ -7,7 +7,10 @@ export const ShowStudents = () => {
       getdata();
   }, [page])
   const getdata=()=>{
-
+    axios.get(`http://localhost:8080/addstudent?_page=${page}`)
+    .then((res)=>{
+        setData(res.data);
+    })
   }
   return (
     <div>
@@ -52,16 +55,20 @@ export const ShowStudents = () => {
         </thead>
         <tbody className="tbody">
           {/* populate all rows like below: */}
+          {data.map((e)=>{
           <tr className="row">
-            <td className="first_name"></td>
-            <td className="last_name"></td>
-            <td className="email"></td>
-            <td className="gender"></td>
-            <td className="age"></td>
-            <td className="tenth_score"></td>
-            <td className="twelth_score"></td>
-            <td className="preferred_branch"></td>
-          </tr>
+             
+                <td className="first_name">{e.first_name}</td>
+                <td className="last_name">{e.last_name}</td>
+                <td className="email">{e.email}</td>
+                <td className="gender">{e.gender}</td>
+                <td className="age">{e.age}</td>
+                <td className="tenth_score">{e.tenth_score}</td>
+                <td className="twelth_score">{e.twelth_score}</td>
+                <td className="preferred_branch">{e.preferred_branch}</td>
+             
+           
+          </tr> })}
         </tbody>
       </table>
     </div>

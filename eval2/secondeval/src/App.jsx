@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AddStudent } from './components/AddStudent';
 import './App.css'
+import { ShowStudents } from './components/ShowStudents';
 
 function App() {
   const [pageText, setPageText] = useState("false")
@@ -15,6 +16,7 @@ function App() {
       {/* make sure the table is shown initially, do not show form initially */}
       {/* make sure to show either of them do not both together */}
       <AddStudent/>
+      <ShowStudents/>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
-
+import axios from 'axios';
+import './addStudent.css'
 export const AddStudent = () => {
   const [formData,setFormData]=useState({
     first_name:"",
@@ -21,9 +22,22 @@ export const AddStudent = () => {
 
     const handleSubmit=(e)=>{
       e.preventDefault();
+      axios.post(`http://localhost:8080/addstudent`,formData)
+      .then((res)=>{
+          setFormData({
+            first_name:"",
+            last_name:"",
+            email:"",
+            gender:"",
+            age:"",
+            tenth_score:"",
+            twelth_score:"",
+            preferred_branch:"",
+          });
+      });
     }
   return (
-    <form className="addstudent" onSubmit={handleSubmit}>
+    <form className="addstudent" onSubmit={(e)=>handleSubmit(e)}>
       <div>
         Firstname:{" "}
         <input
@@ -31,7 +45,8 @@ export const AddStudent = () => {
           name="first_name"
           className="first_name"
           placeholder="enter first name"
-          onChange={handleChange}
+          onChange={(e)=>handleChange(e)}
+          value={formData.first_name}
         />
       </div>
       <div>
@@ -42,7 +57,8 @@ export const AddStudent = () => {
           name="last_name"
           className="last_name"
           placeholder="enter last name"
-          onChange={handleChange}
+          onChange={(e)=>handleChange(e)}
+          value={formData.last_name}
         />
       </div>
       <div>
@@ -53,7 +69,8 @@ export const AddStudent = () => {
           name="email"
           className="email"
           placeholder="enter email"
-          onChange={handleChange}
+          onChange={(e)=>handleChange(e)}
+          value={formData.email}
         />
       </div>
 
@@ -66,7 +83,7 @@ export const AddStudent = () => {
             className="male"
             type="radio"
             value={"male"}
-            onChange={handleChange}
+            onChange={(e)=>handleChange(e)}
           />{" "}
           Female{" "}
           <input
@@ -74,7 +91,7 @@ export const AddStudent = () => {
             className="female"
             type="radio"
             value={"female"}
-            onChange={handleChange}
+            onChange={(e)=>handleChange(e)}
           />
         </div>
       </div>
@@ -85,6 +102,8 @@ export const AddStudent = () => {
           name="age"
           className="age"
           placeholder="enter age"
+          onChange={(e)=>handleChange(e)}
+          value={formData.age}
         />
       </div>
       <div>
@@ -94,6 +113,8 @@ export const AddStudent = () => {
           name="tenth_score"
           className="tenth_score"
           placeholder="enter 10th score"
+          onChange={(e)=>handleChange(e)}
+          value={formData.tenth_score}
         />{" "}
       </div>
       <div>
@@ -103,6 +124,8 @@ export const AddStudent = () => {
           name="twelth_score"
           className="twelth_score"
           placeholder="enter 12th score"
+          onChange={(e)=>handleChange(e)}
+          value={formData.twelth_score}
         />{" "}
       </div>
       <div>
@@ -110,6 +133,7 @@ export const AddStudent = () => {
           value={formData.preferred_branch} // select dropdown needs both value and onChange attributes
           name="preferred_branch"
           className="preferred_branch"
+          onChange={(e)=>handleChange(e)}
         >
           <option value="law">law</option>
           <option value="commerce">commerce</option>
