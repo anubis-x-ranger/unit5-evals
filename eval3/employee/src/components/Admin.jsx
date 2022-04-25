@@ -1,6 +1,10 @@
+import styled from "styled-components";
+
 export const Admin = () => {
   return (
+    <Wrapper>
     <form className="createEmployee">
+    <InputWrapper>
       <input type="text" placeholder="Employee Name" name="employee_name" />
       <input type="text" placeholder="Employee id" name="employee_id" />
       <select name="title">
@@ -30,6 +34,23 @@ export const Admin = () => {
         <option value="qa">QA</option>
       </select>
       <input className="createUser" type="submit" value={"submit"} />
+      </InputWrapper>
     </form>
+    </Wrapper>
   );
 };
+
+const Wrapper=styled.div`
+  display: flex;
+  flex-direction: column;
+  width:1000px;
+  height:600px;
+  justify-content:center ;
+  align-items: center;
+`
+
+const InputWrapper=styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+`
