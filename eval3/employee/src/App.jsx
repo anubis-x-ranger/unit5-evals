@@ -2,7 +2,6 @@ import { useState } from 'react'
 import './App.css'
 import {Navbar} from './components/Navbar'
 import {Routes,Route} from 'react-router-dom';
-import { EmployeeList } from './components/EmployeeList';
 import { Login } from "./components/Login";
 import { EmployeeList } from "./components/EmployeeList";
 import { EmployeeDetails } from "./components/EmployeeDetails";
