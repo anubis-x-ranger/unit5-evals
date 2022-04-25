@@ -1,12 +1,21 @@
-import React from 'react'
+export const Login = () => {
+  //  use reqres to log user in.
 
-const Login = () => {
   return (
-    <div>
-        <input type="text" plkaceholder="Enter your email" />
-        <input type="text" plkaceholder="Enter your password" />
-    </div>
-  )
-}
-
-export default Login
+    <form className="loginform">
+      <input
+        name="username"
+        type="text"
+        placeholder="Enter username"
+        className="login_username"
+      />
+      <input
+        name="password"
+        type="text"
+        placeholder="Enter password"
+        className="login_password"
+      />
+      <input type="submit" value="SIGN IN" className="login_submit" />
+    </form>
+  );
+};
