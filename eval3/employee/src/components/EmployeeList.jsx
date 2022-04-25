@@ -1,4 +1,7 @@
+import axios from "axios"
 export const EmployeeList = () => {
+  const {data}=axios.get("http://localhost:8080/employee");
+  console.log(data.data)
   return (
     <div className="list_container">
       {/* On clicking this card anywhere, user goes to user details */}

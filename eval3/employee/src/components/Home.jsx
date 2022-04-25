@@ -1,11 +1,19 @@
+import axios from 'axios'
+import {useEffect,useState} from 'react'
 export const Home = () => {
+  const [employeeTotal,setEmployeeTotal]=useState(10);
+
+useEffect(()=>{
   
+})
 
   // create statistics for user.
   // get Total user count from DB,
   // other fields are in memory values stored in context API.
   // they will reset to 0
   // if page gets refreshed
+
+
 
   // thins to store in context api
   //   total: get from db,
@@ -19,7 +27,7 @@ export const Home = () => {
       <div className="home">
         <span>Stats</span>
         <div>
-          Total Employees<span className="totalemp"></span>
+          Total Employees<span className="totalemp">: {employeeTotal}</span>
         </div>
         <div>
           Total Terminated: <span className="total_terminated"></span>
